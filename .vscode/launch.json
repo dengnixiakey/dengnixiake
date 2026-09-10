@@ -7,8 +7,9 @@
         {
             "type": "editor-browser",
             "request": "launch",
-            "name": "Open index.html",
-            "url": "file:///c%3A/Users/yangjun/Desktop/vs/index.html"
+            "name": "针对 localhost 启动集成浏览器",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
