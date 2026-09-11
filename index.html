@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的个人导航</title>
+<title>襄阳职业技术大学校园导航站</title>
 
 <style>
     * {
@@ -13,141 +13,146 @@
     }
 
     :root {
-        --bg: #f5f7fb;
-        --card: rgba(255,255,255,0.75);
-        --text: #222;
-        --subtext: #777;
-        --border: rgba(255,255,255,0.8);
-        --accent: #6c63ff;
-        --shadow: 0 10px 35px rgba(60,60,100,0.08);
+        --bg: #f4f7fb;
+        --card: rgba(255,255,255,0.8);
+        --text: #1d2433;
+        --subtext: #697586;
+        --border: rgba(255,255,255,0.85);
+        --accent: #3d6ef7;
+        --accent-soft: rgba(61,110,247,0.12);
+        --success: #1db88c;
+        --shadow: 0 12px 32px rgba(41,57,92,0.08);
     }
 
     body.dark {
-        --bg: #11131a;
-        --card: rgba(30,33,43,0.78);
-        --text: #f3f3f3;
-        --subtext: #aaa;
+        --bg: #111821;
+        --card: rgba(22,29,39,0.8);
+        --text: #edf3ff;
+        --subtext: #9aa8bf;
         --border: rgba(255,255,255,0.08);
-        --accent: #8b83ff;
-        --shadow: 0 10px 35px rgba(0,0,0,0.3);
+        --accent: #7ea2ff;
+        --accent-soft: rgba(126,162,255,0.12);
+        --success: #4fd7aa;
+        --shadow: 0 12px 32px rgba(0,0,0,0.28);
     }
 
     body {
         min-height: 100vh;
-        font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            "Microsoft YaHei",
-            sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
         color: var(--text);
         background:
-            radial-gradient(circle at 10% 10%, rgba(108,99,255,.16), transparent 30%),
-            radial-gradient(circle at 90% 20%, rgba(0,190,255,.12), transparent 30%),
+            radial-gradient(circle at 12% 15%, rgba(61,110,247,0.18), transparent 24%),
+            radial-gradient(circle at 85% 12%, rgba(29,184,140,0.12), transparent 28%),
             var(--bg);
-        transition: .3s;
+        transition: .3s ease;
     }
 
     .container {
-        width: min(1100px, 92%);
-        margin: auto;
-        padding: 35px 0 60px;
+        width: min(1180px, 92%);
+        margin: 0 auto;
+        padding: 34px 0 60px;
     }
 
-    /* 顶部 */
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 35px;
+        margin-bottom: 26px;
     }
 
     .logo {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
     }
 
     .logo-icon {
-        width: 45px;
-        height: 45px;
-        border-radius: 14px;
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
         display: grid;
         place-items: center;
-        color: white;
-        font-size: 22px;
-        background: linear-gradient(135deg, #6c63ff, #9b8cff);
-        box-shadow: 0 8px 20px rgba(108,99,255,.25);
+        background: #f7f7f7;
+        box-shadow: 0 10px 26px rgba(20,92,188,0.18);
+        overflow: hidden;
+        border: 1px solid rgba(15, 76, 162, 0.08);
+    }
+
+    .logo-icon img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
     }
 
     .logo h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .logo p {
         color: var(--subtext);
         font-size: 12px;
-        margin-top: 3px;
+        margin-top: 2px;
     }
 
     .theme-btn {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
         border: 1px solid var(--border);
-        border-radius: 13px;
         background: var(--card);
         color: var(--text);
         cursor: pointer;
         font-size: 18px;
-        backdrop-filter: blur(15px);
+        box-shadow: var(--shadow);
     }
 
-    /* 时间 */
     .welcome {
         text-align: center;
-        margin: 25px 0 30px;
+        margin: 24px auto 26px;
     }
 
     .welcome h2 {
-        font-size: 34px;
-        margin-bottom: 10px;
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 8px;
     }
 
     .welcome p {
         color: var(--subtext);
+        font-size: 15px;
     }
 
     #time {
-        margin-top: 8px;
+        margin-top: 12px;
         font-size: 14px;
         color: var(--accent);
+        letter-spacing: 0.04em;
     }
 
-    /* 搜索 */
     .search-box {
-        max-width: 680px;
-        margin: 0 auto 45px;
         position: relative;
+        max-width: 720px;
+        margin: 0 auto 42px;
     }
 
     .search-box input {
         width: 100%;
-        height: 58px;
-        padding: 0 60px 0 55px;
-        border: 1px solid var(--border);
-        outline: none;
+        height: 60px;
+        padding: 0 68px 0 58px;
         border-radius: 18px;
+        border: 1px solid var(--border);
         background: var(--card);
         color: var(--text);
         font-size: 16px;
         box-shadow: var(--shadow);
-        backdrop-filter: blur(20px);
-        transition: .2s;
+        outline: none;
+        backdrop-filter: blur(16px);
+        transition: .25s ease;
     }
 
     .search-box input:focus {
-        border-color: var(--accent);
-        box-shadow: 0 10px 35px rgba(108,99,255,.15);
+        border-color: rgba(61,110,247,0.6);
+        box-shadow: 0 16px 28px rgba(61,110,247,0.08);
     }
 
     .search-icon {
@@ -159,69 +164,66 @@
 
     .search-hint {
         position: absolute;
-        right: 18px;
+        right: 16px;
         top: 17px;
+        padding: 6px 8px;
+        border: 1px solid rgba(128, 128, 128, 0.25);
+        border-radius: 8px;
         font-size: 12px;
         color: var(--subtext);
-        border: 1px solid rgba(128,128,128,.2);
-        padding: 5px 8px;
-        border-radius: 6px;
     }
 
-    /* 分类 */
     .category {
-        margin-bottom: 35px;
+        margin-bottom: 34px;
     }
 
     .category-title {
         display: flex;
         align-items: center;
         gap: 9px;
-        margin-bottom: 15px;
+        margin-bottom: 14px;
         font-size: 18px;
     }
 
     .category-title span {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .links {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
     }
 
     .link-card {
         display: flex;
         align-items: center;
-        gap: 13px;
-        padding: 17px;
-        min-height: 78px;
-        border-radius: 17px;
+        gap: 12px;
+        padding: 16px 18px;
+        min-height: 82px;
+        border-radius: 18px;
         text-decoration: none;
         color: var(--text);
         background: var(--card);
         border: 1px solid var(--border);
         box-shadow: var(--shadow);
-        backdrop-filter: blur(20px);
-        transition: .25s;
+        transition: transform .2s ease, border-color .2s ease;
     }
 
     .link-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(108,99,255,.35);
-        box-shadow: 0 15px 35px rgba(60,60,100,.13);
+        transform: translateY(-4px);
+        border-color: rgba(61,110,247,0.4);
     }
 
     .link-icon {
-        width: 43px;
-        height: 43px;
-        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
         display: grid;
         place-items: center;
-        border-radius: 13px;
-        font-size: 21px;
-        background: rgba(108,99,255,.1);
+        flex-shrink: 0;
+        background: var(--accent-soft);
+        font-size: 22px;
     }
 
     .link-info {
@@ -229,44 +231,45 @@
     }
 
     .link-name {
+        margin-bottom: 4px;
         font-size: 15px;
-        font-weight: 600;
-        margin-bottom: 5px;
+        font-weight: 700;
     }
 
     .link-desc {
-        color: var(--subtext);
         font-size: 11px;
+        color: var(--subtext);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
+    .quick-note {
+        margin: 22px 0 30px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(61,110,247,0.08), rgba(29,184,140,0.08));
+        border: 1px solid rgba(61,110,247,0.1);
+        color: var(--subtext);
+        font-size: 14px;
+    }
+
     footer {
         text-align: center;
+        margin-top: 40px;
         color: var(--subtext);
         font-size: 12px;
-        margin-top: 50px;
     }
 
-    /* 手机端 */
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         .links {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .welcome h2 {
-            font-size: 28px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 560px) {
         .container {
             padding-top: 20px;
-        }
-
-        header {
-            margin-bottom: 20px;
         }
 
         .links {
@@ -279,335 +282,149 @@
     }
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
-    <!-- 顶部 -->
     <header>
         <div class="logo">
-            <div class="logo-icon">✦</div>
+            <div class="logo-icon" aria-label="襄阳职业技术大学校徽">
+                <img src="school-logo.png" alt="襄阳职业技术大学校徽" onerror="this.style.display='none'; this.alt='校徽图片未加载';" />
+            </div>
             <div>
-                <h1>我的导航</h1>
-                <p>Personal Navigation</p>
+                <h1 id="schoolName">襄阳职业技术大学</h1>
+                <p>Xiangyang Vocational and Technical University</p>
             </div>
         </div>
 
-        <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">
-            🌙
-        </button>
+        <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙</button>
     </header>
 
-    <!-- 欢迎 -->
     <section class="welcome">
-        <h2>欢迎回来 👋</h2>
-        <p>把常用的网站，都放在这里。</p>
+        <h2>校园服务入口</h2>
+        <p>一站式访问教务、体测、学习与校园生活服务</p>
         <div id="time"></div>
     </section>
 
-    <!-- 搜索 -->
     <div class="search-box">
         <span class="search-icon">🔍</span>
-
-        <input
-            type="text"
-            id="search"
-            placeholder="搜索你想要的内容..."
-            autocomplete="off"
-        >
-
+        <input id="search" type="text" placeholder="搜索课程、教务、体测、图书馆..." autocomplete="off">
         <span class="search-hint">Enter</span>
     </div>
 
-    <!-- 学习 -->
-    <section class="category">
-        <div class="category-title">
-            <span>📚</span>
-            <b>学习</b>
-        </div>
+    <div class="quick-note">
+        说明：已接入教务系统入口，后续你只需继续补充其他学校系统网址，即可扩展成完整校园导航站。
+    </div>
 
-        <div class="links">
-
-            <a class="link-card"
-               href="https://www.google.com"
-               target="_blank">
-                <div class="link-icon">🔎</div>
-                <div class="link-info">
-                    <div class="link-name">Google</div>
-                    <div class="link-desc">搜索引擎</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.bing.com"
-               target="_blank">
-                <div class="link-icon">🌐</div>
-                <div class="link-info">
-                    <div class="link-name">Bing</div>
-                    <div class="link-desc">微软搜索</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.wikipedia.org"
-               target="_blank">
-                <div class="link-icon">📖</div>
-                <div class="link-info">
-                    <div class="link-name">Wikipedia</div>
-                    <div class="link-desc">在线百科全书</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://github.com"
-               target="_blank">
-                <div class="link-icon">💻</div>
-                <div class="link-info">
-                    <div class="link-name">GitHub</div>
-                    <div class="link-desc">代码与开源项目</div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- AI -->
-    <section class="category">
-        <div class="category-title">
-            <span>🤖</span>
-            <b>AI 工具</b>
-        </div>
-
-        <div class="links">
-
-            <a class="link-card"
-               href="https://chatgpt.com"
-               target="_blank">
-                <div class="link-icon">✨</div>
-                <div class="link-info">
-                    <div class="link-name">ChatGPT</div>
-                    <div class="link-desc">AI 智能助手</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://claude.ai"
-               target="_blank">
-                <div class="link-icon">🧠</div>
-                <div class="link-info">
-                    <div class="link-name">Claude</div>
-                    <div class="link-desc">AI 助手</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://gemini.google.com"
-               target="_blank">
-                <div class="link-icon">💫</div>
-                <div class="link-info">
-                    <div class="link-name">Gemini</div>
-                    <div class="link-desc">Google AI</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.deepseek.com"
-               target="_blank">
-                <div class="link-icon">🐋</div>
-                <div class="link-info">
-                    <div class="link-name">DeepSeek</div>
-                    <div class="link-desc">AI 对话工具</div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- 娱乐 -->
-    <section class="category">
-        <div class="category-title">
-            <span>🎮</span>
-            <b>娱乐</b>
-        </div>
-
-        <div class="links">
-
-            <a class="link-card"
-               href="https://www.youtube.com"
-               target="_blank">
-                <div class="link-icon">▶️</div>
-                <div class="link-info">
-                    <div class="link-name">YouTube</div>
-                    <div class="link-desc">视频平台</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.bilibili.com"
-               target="_blank">
-                <div class="link-icon">📺</div>
-                <div class="link-info">
-                    <div class="link-name">哔哩哔哩</div>
-                    <div class="link-desc">年轻人的视频社区</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.douyin.com"
-               target="_blank">
-                <div class="link-icon">🎵</div>
-                <div class="link-info">
-                    <div class="link-name">抖音</div>
-                    <div class="link-desc">短视频平台</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://music.163.com"
-               target="_blank">
-                <div class="link-icon">🎧</div>
-                <div class="link-info">
-                    <div class="link-name">网易云音乐</div>
-                    <div class="link-desc">音乐平台</div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- 常用 -->
-    <section class="category">
-        <div class="category-title">
-            <span>⭐</span>
-            <b>常用网站</b>
-        </div>
-
-        <div class="links">
-
-            <a class="link-card"
-               href="https://mail.google.com"
-               target="_blank">
-                <div class="link-icon">📧</div>
-                <div class="link-info">
-                    <div class="link-name">Gmail</div>
-                    <div class="link-desc">电子邮箱</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.notion.so"
-               target="_blank">
-                <div class="link-icon">📝</div>
-                <div class="link-info">
-                    <div class="link-name">Notion</div>
-                    <div class="link-desc">笔记与知识管理</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://drive.google.com"
-               target="_blank">
-                <div class="link-icon">☁️</div>
-                <div class="link-info">
-                    <div class="link-name">Google Drive</div>
-                    <div class="link-desc">云端文件</div>
-                </div>
-            </a>
-
-            <a class="link-card"
-               href="https://www.canva.com"
-               target="_blank">
-                <div class="link-icon">🎨</div>
-                <div class="link-info">
-                    <div class="link-name">Canva</div>
-                    <div class="link-desc">在线设计</div>
-                </div>
-            </a>
-
-        </div>
-    </section>
+    <div id="navContainer"></div>
 
     <footer>
-        © 2026 我的个人导航 · Made with ❤️
+        © 2026 校园导航站 · 适用于学生日常学习与办公
     </footer>
-
 </div>
 
 <script>
+    const schoolConfig = {
+        schoolName: '襄阳职业技术大学',
+        schoolDomain: 'https://hbxytc.cn',
+        sections: [
+            {
+                title: '📚 教务与学习',
+                links: [
+                    { name: '教务系统', desc: '学生信息与课程管理', url: 'https://jwxt.hbxytc.cn/jwapp/sys/homeapp/home/index.html?av=&contextPath=/jwapp#/', icon: '📘' },
+                    { name: '选课系统', desc: '选课与培养计划', url: 'https://xk.hbxytc.cn/xsxk/profile/index.html', icon: '📋' },
+                    { name: '智慧职教', desc: '职业教育平台', url: 'https://www.icve.com.cn/index', icon: '🎓' },
+                    { name: '学习通', desc: '在线学习与作业', url: 'https://passport2.chaoxing.com/login?fid=12&refer=http%3A%2F%2Fi.chaoxing.com%2Fbase%3Fnull&space=2', icon: '🧠' }
+                ]
+            },
+            {
+                title: '🏃 体测与体育',
+                links: [
+                    { name: '体测', desc: '体测数据与检测结果', url: 'http://hbxytc.ticeyun.com:70/wxlogin?method=logout', icon: '🏃' },
+                    { name: '体育选课', desc: '体育课程与课表', url: 'https://xk.hbxytc.cn/xsxk/profile/index.html', icon: '⚽' },
+                    { name: 'iTEST智能测评云平台', desc: '智能测评与考试', url: 'https://itestcloud.unipus.cn/', icon: '🧪' },
+                    { name: '中国大学MOOC', desc: '大学公开课平台', url: 'https://www.icourse163.org/', icon: '📖' }
+                ]
+            },
+            {
+                title: '🧩 校园服务',
+                links: [
+                    { name: '学校官网', desc: '学校简介与通知公告', url: 'https://www.hbxytc.cn/', icon: '🏛️' },
+                    { name: '图书馆', desc: '馆藏与借阅服务', url: 'https://tsg.hbxytc.cn/', icon: '📚' },
+                    { name: '网上办事大厅', desc: '报名、申请与流程', url: 'https://xgxt.hbxytc.cn/xsfw/sys/emapfunauth/pages/funauth-login.do?service=https://xgxt.hbxytc.cn/xsfw/sys/xggzptapp/index.do#/', icon: '🧾' },
+                    { name: '校园邮箱', desc: '学生邮箱与通知', url: 'https://mail.example.edu.cn', icon: '📧' }
+                ]
+            },
+            {
+                title: '🧭 常用工具',
+                links: [
+                    { name: '学工系统', desc: '学生事务与状态查询', url: 'https://xgxt.hbxytc.cn/xsfw/sys/emapfunauth/pages/funauth-login.do?service=https://xgxt.hbxytc.cn/xsfw/sys/xggzptapp/index.do#/', icon: '🧑‍🎓' },
+                    { name: '校园一卡通', desc: '消费与证件服务', url: 'https://card.example.edu.cn', icon: '💳' },
+                    { name: '学习资料', desc: '课程资料与资源库', url: 'https://res.example.edu.cn', icon: '🗂️' },
+                    { name: '校园地图', desc: '教学楼与宿舍导航', url: 'https://map.example.edu.cn', icon: '🧭' }
+                ]
+            }
+        ]
+    };
 
-    /* 实时时间 */
+    document.getElementById('schoolName').textContent = schoolConfig.schoolName;
+
+    const navContainer = document.getElementById('navContainer');
+
+    function renderNav() {
+        navContainer.innerHTML = schoolConfig.sections.map(section => `
+            <section class="category">
+                <div class="category-title"><span>${section.title.split(' ')[0]}</span><b>${section.title.replace(/^\S+\s/, '')}</b></div>
+                <div class="links">
+                    ${section.links.map(link => `
+                        <a class="link-card" href="${link.url}" target="_blank" rel="noopener noreferrer">
+                            <div class="link-icon">${link.icon}</div>
+                            <div class="link-info">
+                                <div class="link-name">${link.name}</div>
+                                <div class="link-desc">${link.desc}</div>
+                            </div>
+                        </a>
+                    `).join('')}
+                </div>
+            </section>
+        `).join('');
+    }
+
+    renderNav();
+
     function updateTime() {
-
         const now = new Date();
-
-        const week = [
-            "星期日",
-            "星期一",
-            "星期二",
-            "星期三",
-            "星期四",
-            "星期五",
-            "星期六"
-        ];
-
+        const week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
         const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, "0");
-        const day = String(now.getDate()).padStart(2, "0");
-
-        const hour = String(now.getHours()).padStart(2, "0");
-        const minute = String(now.getMinutes()).padStart(2, "0");
-        const second = String(now.getSeconds()).padStart(2, "0");
-
-        document.getElementById("time").innerText =
-            `${year}-${month}-${day} ${week[now.getDay()]} · ${hour}:${minute}:${second}`;
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('time').textContent = `${year}-${month}-${day} ${week[now.getDay()]} · ${h}:${m}:${s}`;
     }
 
     updateTime();
     setInterval(updateTime, 1000);
 
-
-    /* 深色模式 */
     function toggleTheme() {
-
-        document.body.classList.toggle("dark");
-
-        const isDark =
-            document.body.classList.contains("dark");
-
-        document.getElementById("themeBtn").innerText =
-            isDark ? "☀️" : "🌙";
-
-        localStorage.setItem("darkMode", isDark);
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
     }
 
-    /* 保存主题 */
-    if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark");
-        document.getElementById("themeBtn").innerText = "☀️";
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+        document.getElementById('themeBtn').textContent = '☀️';
     }
 
-
-    /* 搜索 */
-    document.getElementById("search")
-        .addEventListener("keydown", function(e) {
-
-        if (e.key === "Enter") {
-
+    document.getElementById('search').addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
             const keyword = this.value.trim();
-
-            if (keyword) {
-
-                const url =
-                    "https://www.google.com/search?q=" +
-                    encodeURIComponent(keyword);
-
-                window.open(url, "_blank");
-            }
+            if (!keyword) return;
+            const url = 'https://www.google.com/search?q=' + encodeURIComponent(keyword);
+            window.open(url, '_blank');
         }
     });
-
 </script>
-
 </body>
 </html>
